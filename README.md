@@ -28,4 +28,5 @@ Jenkins pipeline: stagePipeline/Jenkinsfile
 - SonarQube analysis and quality gate
 - Upload the war artifact to Nexus
 - Build the app Docker image and push it to Amazon ECR
+- Triggered automatically by a GitHub webhook on every push
 
