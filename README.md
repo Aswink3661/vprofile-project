@@ -22,4 +22,10 @@ sql dump file:
 - db_backup.sql file is a mysql dump file.we have to import this dump to mysql db server
 - > mysql -u <user_name> -p accounts < db_backup.sql
 
+# CI/CD
+Jenkins pipeline: stagePipeline/Jenkinsfile
+- Build, test and checkstyle with Maven
+- SonarQube analysis and quality gate
+- Upload the war artifact to Nexus
+- Build the app Docker image and push it to Amazon ECR
 
