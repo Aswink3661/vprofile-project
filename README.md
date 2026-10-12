@@ -23,10 +23,15 @@ sql dump file:
 - > mysql -u <user_name> -p accounts < db_backup.sql
 
 # CI/CD
-Jenkins pipeline: stagePipeline/Jenkinsfile
+Staging pipeline: stagePipeline/Jenkinsfile
 - Build, test and checkstyle with Maven
 - SonarQube analysis and quality gate
 - Upload the war artifact to Nexus
 - Build the app Docker image and push it to Amazon ECR
-- Triggered automatically by a GitHub webhook on every push
+- Deploy the image to the ECS staging cluster (vproappstaging)
+
+Production pipeline: ProdPipeline/Jenkinsfile
+- Deploy the latest image from Amazon ECR to the ECS production cluster (vproapp-prod)
+
+Both pipelines are triggered automatically by a GitHub webhook on every push
 
